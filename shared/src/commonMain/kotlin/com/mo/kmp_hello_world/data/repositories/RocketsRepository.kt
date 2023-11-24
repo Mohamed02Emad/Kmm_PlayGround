@@ -19,7 +19,7 @@ class RocketsRepository {
         //return mapped version of the list to get local dates not utc
         return rockets.map {
             it.copy(
-                launchDate =  getDateFromUTC(it.launchDate)
+                launchDate = getDateFromUTC(it.launchDate)
             )
         }
     }
@@ -30,6 +30,14 @@ class RocketsRepository {
             emit(RequestState.Success(getDateOfLastSuccessfulLaunch()))
         } catch (e: Exception) {
             emit(RequestState.Error(e.message))
+        }
+    }
+
+    suspend fun getLastSuccessfulLaunchDateAsList(): List<RocketLaunch> {
+        return try {
+            getDateOfLastSuccessfulLaunch()
+        } catch (e: Exception) {
+            emptyList<RocketLaunch>()
         }
     }
 }

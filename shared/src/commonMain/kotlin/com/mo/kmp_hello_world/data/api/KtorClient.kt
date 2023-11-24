@@ -1,12 +1,8 @@
 package com.mo.kmp_hello_world.data.api
 
-import com.mo.kmp_hello_world.data.models.RocketLaunch
-import com.mo.kmp_hello_world.utils.getDateFromUTC
-import io.ktor.client.*
-import io.ktor.client.call.body
-import io.ktor.client.plugins.contentnegotiation.*
-import io.ktor.client.request.get
-import io.ktor.serialization.kotlinx.json.*
+import io.ktor.client.HttpClient
+import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
 class KtorClient {

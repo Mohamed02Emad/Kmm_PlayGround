@@ -46,10 +46,7 @@ kotlin {
             implementation("io.ktor:ktor-client-darwin:$ktorVersion")
         }
 //        val iosMain by getting {
-//            dependencies {
-//                implementation("io.ktor:ktor-client-darwin:$ktorVersion")
-//            }
-//        }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
